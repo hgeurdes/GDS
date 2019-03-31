@@ -1,118 +1,248 @@
-<HTML>
-<HEAD>
-<!-- This HTML file has been created by J.F. geurdes-->
+<!DOCTYPE html>
+<html lang="en">
 
-<TITLE>Proof synthetic data GDS</TITLE>
+    <head>
+    <title>Algorithms</title>
+    <!-- Copy everything in this block to all other html files -->
+  <!-- BLOCK Start -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-</HEAD>
-<BODY>
-</p>
-<B><I><u>Results of computations on synthetic data:</u></I></B>
-</P>
-In the figures below (Fig 3 and 4) the results of the computations on synthetic data
-generated with
-<a name="alg2" href="gdsalg.html">the algorithm</a> are presented.
-</p>
-The basic test data are obtained from the Stammerdijk. This sample contains an
-hourly record of Water level, Temperature and Pressure.
-In order to generate a comparable synthetic data series of 5 minutes interval,
-we created simulated data points between the real hourly interval Stammerdijk data.
-</p>
-With the use of synthetic data it was subsequently investigated
-whether the outlier structure in the purple line
-can be connected to an aspect of erosion.
-In this case the progression of riverbank/coastal erosion was
-simulated with the use of dike data (Stammerdijk) that was on a 5 minutes
-interval perturbed with an amount of random movement.
-</p>
-It is a hypothesis that when water inside an geo-object
-can increasingly show more random freedom of movement,
-that the amount of dampening material is eroded away by the abrasive action
-of the water.
-The amount of randomness in the water level inside the object is expressed
-in a factor designated Rf.
-</p>
-Although the Rf factor is, of course, only indicative of erosion, it is good to
-present the basic way in which the data points were generated:
-</p>
-stamOmmOUT[j]<-stamIN[n]*randIN[j]
-</p>
-with:
-</p>
-randIN<-1+(sgnIN*randIN*Rf) and,
-</p>
-sgnIN<-sign(0.5-runif(1834)) 
-</p>
-Note that A<-B means: A "becomes" B and we used N=1834 generated 5 min interval data points.
-</P>
-The array randIN contains random generated numbers (R runif).
-The sgnIN array contains the random direction of the fluctuation.
-As can be seen, the final array used was stamOmmOUT where the Rf is a factor that
-allows the amount of plus or minus deviation from the measured values of the Stammerdijk.
-(array stamIN). In the two figures below, X represents the Waterlevel
-(based on X<-stamOmmOUT).
-T and P are generated in a similar way but they do not vary in the numerical experiments
-represented in the two figures below.
-</p>
-In the  two figures below (Fig 3 and 4) two series computations are
-presented where we only varied the random factor Rf of the
-Water level time series but did not change
-the Temperature and the Pressure values in the respective time-series.
-In figure 3 we employed "an average" randomness (Rf=0.005).
-</P>
-<img src="diag3.jpg" widt=400 height=400>
-<B>Fig 3</B>
-</p>
-<I>
-Presentation of a medium size disturbance Rf=0.005.
-The time series holds 1834 values. X represents the water level,
-T represents the temperature and P represents the Pressure.
-On the left hand side of the figure, one sees the purple line with <B>35%
-computed outlier mismatches</B> from the measured water level
-represented by the black line. The left hand lower panel represents
-the fit of the red line with the measure values.
-Middle lower panel represents the combined purple,
-red and black lines. The real hourly data of the
-Stammerdijk gave rise to per 5 minutes
-computed values based on the random factor Rf=0.005.
-</I>
-</p>
-In figure 4, based upon the same T and P time series as in Figure 3, the Water level
-randomness is increased to Rf=0.1.
-</p>
-<img src="diag4.jpg" widt=400 height=400>
-<B> Fig 4</B>
-</p>
-<I>
-Presentation of a relative high disturbance Rf=0.1.
-The time series holds 1834 values.
-X represents the water level, T represents the temperature and P represents
-the Pressure.
-On the left hand side of the figure, one sees the purple line
-with <B>84% computed outlier mismatches</B>
-from the measured water level represented by the black line.
-The left hand lower panel represents the fit of the red line
-with the measure values. Middle lower panel represents
-the combined purple, red and black lines.
-The real hourly data of the Stammerdijk gave rise to per 5 minutes
-computed values based on the random factor Rf=0.1.
-</I>
-</p>
-Although the results of the Rf=0.005 are still higher than
-the Watergraafsmeer results <a name="alg2" href="gdsalg2.html">(fig 2) Watergraafsmeerdijk</a> 
-the computer experiment with synthetic data supports the
-idea that internal lack of material to dampen the freedom of movement
-is related to the outliers in the purple line.
-Note that the Rf=0.1 simulations coincide with the outcome of the Ommelanderzeedijk, i.e
-<a name="alg2" href="gdsalg2.html">(fig 2) Ommelanderzeedijk</a>.
-</P>
-<U>
-This supports the notion that erosion progression can be
-monitored in this way</U>.
-</p>
-The reader can in <a name="alg2" href="gdshydro.html"><b>the next section</b></a>
-obtain more information about the application of the data analytic method to the erosion
-caused by hydropower dams. We also provide the basic design for a
-<a name="alg2" href="gdsbreak.html"><b>breakwater</b></a> application.
-</BODY>
-</HTML>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Algorithms
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="gdsalg.html">General introduction algorithm</a>
+                <a class="dropdown-item" href="gdsalg2.html">1 Application to dike data analysis</a>
+                <a class="dropdown-item" href="gdsalg3.html">2 Syhtetic data proof</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Applications
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                  <a class="dropdown-item" href="gdsbreak.html">Breakwater</a>
+                  <a class="dropdown-item" href="gdshydro.html">Tidal turbines placement</a>
+                  <!-- <a class="dropdown-item" href="faq.html">FAQ</a> -->
+              </div>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="pricing.html">Pricing Table</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+  </nav>
+<!-- BLOCK end -->
+
+    <header>
+    
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+            <h1 class="my-4">2. Synthetic data analysis</h1>
+        
+            <!-- Marketing Icons Section -->
+        
+            <!-- /.row -->
+            <!-- Features Section -->
+            <div class="row">
+                <div class="col-lg-6">
+
+                    </p>
+                    <B><I><u>Results of computations on synthetic data:</u></I></B>
+                    </P>
+                    In the figures below (Fig 3 and 4) the results of the computations on synthetic data
+                    generated with
+                    <a name="alg2" href="gdsalg.html">the algorithm</a> are presented.
+                    </p>
+                    The basic test data are obtained from the Stammerdijk. This sample contains an
+                    hourly record of Water level, Temperature and Pressure.
+                    In order to generate a comparable synthetic data series of 5 minutes interval,
+                    we created simulated data points between the real hourly interval Stammerdijk data.
+                    </p>
+                    With the use of synthetic data it was subsequently investigated
+                    whether the outlier structure in the purple line
+                    can be connected to an aspect of erosion.
+                    In this case the progression of riverbank/coastal erosion was
+                    simulated with the use of dike data (Stammerdijk) that was on a 5 minutes
+                    interval perturbed with an amount of random movement.
+                    </p>
+                    It is a hypothesis that when water inside an geo-object
+                    can increasingly show more random freedom of movement,
+                    that the amount of dampening material is eroded away by the abrasive action
+                    of the water.
+                    The amount of randomness in the water level inside the object is expressed
+                    in a factor designated Rf.
+                    </p>
+                    Although the Rf factor is, of course, only indicative of erosion, it is good to
+                    present the basic way in which the data points were generated:
+                    </p>
+                    stamOmmOUT[j]<-stamIN[n]*randIN[j]
+                    </p>
+                    with:
+                    </p>
+                    randIN<-1+(sgnIN*randIN*Rf) and,
+                    </p>
+                    sgnIN<-sign(0.5-runif(1834)) 
+                    </p>
+                    Note that A<-B means: A "becomes" B and we used N=1834 generated 5 min interval data points.
+                    </P>
+                    The array randIN contains random generated numbers (R runif).
+                    The sgnIN array contains the random direction of the fluctuation.
+                    As can be seen, the final array used was stamOmmOUT where the Rf is a factor that
+                    allows the amount of plus or minus deviation from the measured values of the Stammerdijk.
+                    (array stamIN). In the two figures below, X represents the Waterlevel
+                    (based on X<-stamOmmOUT).
+                    T and P are generated in a similar way but they do not vary in the numerical experiments
+                    represented in the two figures below.
+                    </p>
+                    In the  two figures below (Fig 3 and 4) two series computations are
+                    presented where we only varied the random factor Rf of the
+                    Water level time series but did not change
+                    the Temperature and the Pressure values in the respective time-series.
+                    In figure 3 we employed "an average" randomness (Rf=0.005).
+                   
+                    In figure 4, based upon the same T and P time series as in Figure 3, the Water level
+                    randomness is increased to Rf=0.1.
+                    </P>
+                    Although the results of the Rf=0.005 are still higher than
+                    the Watergraafsmeer results <a name="alg2" href="gdsalg2.html">(fig 2) Watergraafsmeerdijk</a> 
+                    the computer experiment with synthetic data supports the
+                    idea that internal lack of material to dampen the freedom of movement
+                    is related to the outliers in the purple line.
+                    Note that the Rf=0.1 simulations coincide with the outcome of the Ommelanderzeedijk, i.e
+                    <a name="alg2" href="gdsalg2.html">(fig 2) Ommelanderzeedijk</a>.
+                    </P>
+                    <U>
+                    This supports the notion that erosion progression can be
+                    monitored in this way</U>.
+                    </p>
+                    The reader can in <a name="alg2" href="gdshydro.html"><b>the next section</b></a>
+                    obtain more information about the application of the data analytic method to the erosion
+                    caused by hydropower dams. We also provide the basic design for a
+                    <a name="alg2" href="gdsbreak.html"><b>breakwater</b></a> application.
+                </div>
+                <div class="col-md-6 mb-5">
+                        <div class="card border-0">
+                                <img class="card-img-top" src="diag3.jpg" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Fig 3</h4>
+                                    <p class="card-text"> 
+                                    <i>
+                                        <small>
+        
+                                                Presentation of a medium size disturbance Rf=0.005.
+                                                The time series holds 1834 values. X represents the water level,
+                                                T represents the temperature and P represents the Pressure.
+                                                On the left hand side of the figure, one sees the purple line with <B>35%
+                                                computed outlier mismatches</B> from the measured water level
+                                                represented by the black line. The left hand lower panel represents
+                                                the fit of the red line with the measure values.
+                                                Middle lower panel represents the combined purple,
+                                                red and black lines. The real hourly data of the
+                                                Stammerdijk gave rise to per 5 minutes
+                                                computed values based on the random factor Rf=0.005.
+                                       </small>
+                                        </i>
+                                    </p>
+                                </div>
+                            </div>
+                    <div class="card border-0">
+                        <img class="card-img-top" src="diag4.jpg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Fig 4</h4>
+                            <p class="card-text"> 
+                            <i>
+                                <small>
+
+                                        Presentation of a relative high disturbance Rf=0.1.
+                                        The time series holds 1834 values.
+                                        X represents the water level, T represents the temperature and P represents
+                                        the Pressure.
+                                        On the left hand side of the figure, one sees the purple line
+                                        with <B>84% computed outlier mismatches</B>
+                                        from the measured water level represented by the black line.
+                                        The left hand lower panel represents the fit of the red line
+                                        with the measure values. Middle lower panel represents
+                                        the combined purple, red and black lines.
+                                        The real hourly data of the Stammerdijk gave rise to per 5 minutes
+                                        computed values based on the random factor Rf=0.1.
+                               </small>
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                           
+                        </div>
+         
+                </div>
+                    <!-- </p>
+                    <img src="diag1.jpg" widt=400 height=400>
+                    <B>Fig 1</B>
+                    </p>
+                </div> -->
+
+                
+                <a href="gdsalg.html" class="btn btn-primary" role="button">Intro Algorithms</a>
+                <a href="gdsalg2.html" class="btn btn-primary" role="button">Dike data analysis</a>
+                </div>
+
+                <!--
+                <a href="gdsalg3.html" class="btn btn-primary" role="button">bla</a>
+                -->
+            </div>
+            <hr>
+        </div>
+            <!-- /.container -->
+
+      <!-- Footer -->
+      </div>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Han Geurdes</p>
+        <p class="text-white text-center">
+            <i class="fas fa-envelope"></i> h.geurdes@gmail.com 
+            &nbsp;
+            &nbsp;
+            <i class="fas fa-phone"></i>+ 01 234 567 88</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

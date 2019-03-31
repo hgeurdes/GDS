@@ -1,59 +1,177 @@
-<HTML>
-<HEAD>
-<!-- This HTML file has been created by J.F. geurdes-->
+<!DOCTYPE html>
+<html lang="en">
 
-<TITLE>Algorithm GDS</TITLE>
+    <head>
+    <title>Algorithms</title>
 
-</HEAD>
-<BODY>
-</p>
-<B><I><u>Algorithm flow:</u></I></B>
-</P>
-In the figure below (Fig 1) the flow of the data is presented.</p>
-The model aims to obtain a random dynamical systems description of water level as output variable.
-The temperature and pressure are input variables.
-Note that the model is purely statistical. No physics assumptions are made.
-In [<a name="bib", href="gdsref.html">3</a>] we find proof
-that an initial approximative model can be converted to a better model, if a cocycle is found.
-In this sense the numerical analysis is doing the model-theorizing
-from the data. It must be noted that, most likely we are working with random differential equations
-with solution sets that overlap [<a name="bib", href="gdsref.html">7</a>].
-</p>
-Looking at Fig 1, after the first data cleaning module, we employed an initial linear random differential equation.
-as a basis for the computations.
-Subsequently, a cocycle (flow) structure is obtained [<a name="bib", href="gdsref.html">3</a>] in the box
-labeled "RDS model cocycle".
-</p>
-Subsequently, a water level is computed and presented. The latter is not a trivial representation of the computed cocycle values.
-There are two cases.
-One unperturbed, presented in the red-line (follow the blue 1 label) and one
-perturbed pressure (delta=0.5 kPa) presented in the purple line (follow the green 2 label).
 
-</p>
-<img src="diag1.jpg" widt=400 height=400>
-<B>Fig 1</B>
-</p>
-<I>
-The flow of the numerics through the computations is as follows.
-The inputs are time series in Pressure, Temperature and Water level in geo-environments like riverbank or coast.
-First the unperturbed model is computed.
-Follow the blue 1 to see the flow of the computation.
-The outcome is represented in a red line.
-The red-line is checked to fit the measured data in the black line (Fig. 1).
-If a reasonably good fit between measured (black - line) water level and
-computed (red-line) water level is found, then,
-the pressure is globally increased with 0.5kPa.
-In the numerics flow this is done along the green 2.
-</I></P>
-The starting point of the perturbation computations
-is the (horizontal line) exit of the Water level computation module. Then the perturbed P enters the cocycle via interpolation.
-Finally, Water level is computed again and presented in a purple line.(along the green 2).
-</p>
-Then we have three lines. The black line representing
-the measurements, the red-line representing the unperturbed model
-and the purple line representing the perturbed model.
+    <!-- Copy everything in this block to all other html files -->
+  <!-- BLOCK Start -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-In the <a name="alg2" href="gdsalg2.html"><B>following section</B></a> it
-is demonstrated that this is related to geo-environment internal erosion.
-</BODY>
-</HTML>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Home</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Algorithms
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                  <a class="dropdown-item" href="gdsalg.html">General introduction algorithm</a>
+                  <a class="dropdown-item" href="gdsalg2.html">1 Application to dike data analysis</a>
+                  <a class="dropdown-item" href="gdsalg3.html">2 Syhtetic data proof</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Applications
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                    <a class="dropdown-item" href="gdsbreak.html">Breakwater</a>
+                    <a class="dropdown-item" href="gdshydro.html">Tidal turbines placement</a>
+                    <!-- <a class="dropdown-item" href="faq.html">FAQ</a> -->
+                </div>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" href="pricing.html">Pricing Table</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+    </nav>
+  <!-- BLOCK end -->
+
+    <header>
+    
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+            <h1 class="my-4">General introduction algorithm</h1>
+        
+            <!-- Marketing Icons Section -->
+        
+            <!-- /.row -->
+            <!-- Features Section -->
+            <div class="row">
+                <div class="col-lg-8">
+
+                    </p>
+                    <B><I><u>Algorithm flow:</u></I></B>
+                    </P>
+                    In the figure below (Fig 1) the flow of the data is presented.</p>
+                    The model aims to obtain a random dynamical systems description of water level as output variable.
+                    The temperature and pressure are input variables.
+                    Note that the model is purely statistical. No physics assumptions are made.
+                    In [<a name="bib", href="gdsref.html">3</a>] we find proof
+                    that an initial approximative model can be converted to a better model, if a cocycle is found.
+                    In this sense the numerical analysis is doing the model-theorizing
+                    from the data. It must be noted that, most likely we are working with random differential equations
+                    with solution sets that overlap [<a name="bib", href="gdsref.html">7</a>].
+                    </p>
+                    Looking at Fig 1, after the first data cleaning module, we employed an initial linear random differential equation.
+                    as a basis for the computations.
+                    Subsequently, a cocycle (flow) structure is obtained [<a name="bib", href="gdsref.html">3</a>] in the box
+                    labeled "RDS model cocycle".
+                    </p>
+                    Subsequently, a water level is computed and presented. The latter is not a trivial representation of the computed cocycle values.
+                    There are two cases.
+                    One unperturbed, presented in the red-line (follow the blue 1 label) and one
+                    perturbed pressure (delta=0.5 kPa) presented in the purple line (follow the green 2 label).
+                </p>
+                    The starting point of the perturbation computations
+                    is the (horizontal line) exit of the Water level computation module. Then the perturbed P enters the cocycle via interpolation.
+                    Finally, Water level is computed again and presented in a purple line.(along the green 2).
+                    </p>
+                    Then we have three lines. The black line representing
+                    the measurements, the red-line representing the unperturbed model
+                    and the purple line representing the perturbed model.
+
+                    In the <a name="alg2" href="gdsalg2.html"><B>following section</B></a> it
+                    is demonstrated that this is related to geo-environment internal erosion.
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card border-0">
+                        <img class="card-img-top" src="diag1.jpg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Fig 1</h4>
+                            <p class="card-text"> 
+                            <i>
+                                <small>
+
+                                    The flow of the numerics through the computations is as follows.
+                                    The inputs are time series in Pressure, Temperature and Water level in geo-environments like riverbank or coast.
+                                    First the unperturbed model is computed.
+                                    Follow the blue 1 to see the flow of the computation.
+                                    The outcome is represented in a red line.
+                                    The red-line is checked to fit the measured data in the black line (Fig. 1).
+                                    If a reasonably good fit between measured (black - line) water level and
+                                    computed (red-line) water level is found, then,
+                                    the pressure is globally increased with 0.5kPa.
+                                    In the numerics flow this is done along the green 2.
+                                </small>
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- </p>
+                    <img src="diag1.jpg" widt=400 height=400>
+                    <B>Fig 1</B>
+                    </p>
+                </div> -->
+
+                
+                </div>
+
+                <a href="gdsalg2.html" class="btn btn-primary" role="button">Dike data analysis</a>
+                <a href="gdsalg3.html" class="btn btn-primary" role="button">Synthetic data proof</a>
+            </div>
+            <hr>
+        </div>
+            <!-- /.container -->
+      <!-- Footer -->
+      </div>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Han Geurdes</p>
+        <p class="text-white text-center">
+            <i class="fas fa-envelope"></i> h.geurdes@gmail.com 
+            &nbsp;
+            &nbsp;
+            <i class="fas fa-phone"></i>+ 01 234 567 88</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

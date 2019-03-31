@@ -1,78 +1,175 @@
-<HTML>
-<HEAD>
-<!-- This HTML file has been created by J.F. Geurdes -->
+<!DOCTYPE html>
+<html lang="en">
 
-<TITLE>Hydropower dam application GDS</TITLE>
-</HEAD>
-<BODY>
-</p>
-<B><I><u>Mitigating riverbank erosion caused by a hydropower dam:</u></I></B></p>
-Optimal placement of hydro-kinetic turbines in the tidal flow and/or
-the outflow of a hydropower dam will be investigated for simulated optimal placement in a flow.
-In the well documented case of hydropower outflow, severe riverbank or
-coastal erosion may occur. This is related to the blockage of sediment
-transport from the upstream side of the dam to the downstream side. This resembles somewhat the blockage of sediment
-caused by a breakwater.
+    <head>
+    <title>Algorithms</title>
+   <!-- Copy everything in this block to all other html files -->
+  <!-- BLOCK Start -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-</P>
-A paradigm case is the coastal erosion demonstrated in relation to the
-operation of the hydropower dams in the Volta in Ghana.
-A paper written after the construction of the Akosombo dam 
-[<a name="bib", href="gdsref.html">5</a>] showed that the construction
-and operation of the hydropower dam at Akosombo caused the deep shoreface and coastal erosion of the Volta estuary.
-A more recent study of Anthony,
-[<a name="bib", href="gdsref.html">6</a>] replicates the findings of Ly in
-[<a name="bib", href="gdsref.html">5</a>]. Both studies demonstrate the erosion
-caused by the operation of the hydropower dam.
-</P>
-In accordance with <a name="orig", href="gdsdatasysp.html">the vision of GDS</a>
-it can be possible to mitigate the (nearby) riverbank erosion because
-of lack of sediment
-by placing hydrokinetic turbines in the outflow of the hydropower dam.
-The erosion occurs because of the abrasive action of the water without sediment to compensate.
-In the figure below (Fig 5) we see the situation when
-<u>no</u> tidal turbines are placed in the outflow.
-</p>
-<img src="diag5.jpg" widt=400 height=400>
-<B>Fig 5</B>
-</p>
-<i>
-Hydropower dam outflow. Streamlines are in red.
-Measuring instruments are the blue triangles. They represent the
-three sensors Water level, Temperature and Pressure.
-</I></P>
-No change in streamlines through hydro-kinetic turbines in the streamlines.
-Therefore we may expect increase in riverbank erosion.
-As illustration, the black-purple line diagram shows many outliers in the purple line
-related to the measured value black line.
-This is an indication of the statistical result of the erosion monitoring
-software (see <a name="algodef", href="gdsalg.html">the algorithm</a> and/or
-the results of the <a name="algores", href="gdsalg2.html">numerical tests</a>
-on the dikes: Ommelanderzeedijk and Watergraafsmeerdijk.
-</p>
-The eroding pattern in the panel with the black and purple lines derives from the Ommelanderzeedijk
-and is for illustrative purposes only. It shows an instable pattern in the purple line (lots of outliers).
-</p>
-In the figure below (Fig 6) the hydrokinetic turbines are placed in the outflow of the hydropower dam.
-The turbines derive their electrical energy from the strength of the flow and generate approximately 4 MW.
-Their placement can also influence the direction of the outflow.
-</p>
-<img src="diag6.jpg" widt=400 height=400>
-<B>Fig 6</B>
-</p>
-          <I>
-Generating 4MW additional electricity.
-This is done with the placement of hydro-kinetic turbines in the outflow of the hydropower dam.
-The erosion measurements are the blue triangles.
-The software shows a more stable pattern (less geohydraulic fragility). This means less erosion.
-</I></p>
-In figure 6 one sees a diminished eroding pattern.
-This is in a certain sense an optical illusion because when no sediment is transpoterted from the upstream
-side, the erosion will remain at, or around, a certain level and will show no substantial progression anymore.
-Our tool is essentially looking for differentiations in patterns.
-Nevertheless the two inserted diagrams are presented because they refer to
-our model <a name="algores", href="gdsalg2.html">laboratory computations</a> and
-<a name="algosim", href="gdsalg3.html">laboratory simulations</a> and give a proper illustration of what is expected.
 
-</BODY>
-</HTML>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Algorithms
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="gdsalg.html">General introduction algorithm</a>
+                <a class="dropdown-item" href="gdsalg2.html">1 Application to dike data analysis</a>
+                <a class="dropdown-item" href="gdsalg3.html">2 Syhtetic data proof</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Applications
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                  <a class="dropdown-item" href="gdsbreak.html">Breakwater</a>
+                  <a class="dropdown-item" href="gdshydro.html">Tidal turbines placement</a>
+                  <!-- <a class="dropdown-item" href="faq.html">FAQ</a> -->
+              </div>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="pricing.html">Pricing Table</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+  </nav>
+<!-- BLOCK end -->
+
+    <header>
+    
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+            <h1 class="my-4">Hydropower dam application</h1>
+        
+            <!-- Marketing Icons Section -->
+        
+            <!-- /.row -->
+            <!-- Features Section -->
+            <div class="row">
+                <div class="col-lg-8">
+
+                    </p>
+                    <B><I><u>Mitigating riverbank erosion caused by a hydropower dam:</u></I></B></p>
+                    Optimal placement of hydro-kinetic turbines in the tidal flow and/or
+                    the outflow of a hydropower dam will be investigated for simulated optimal placement in a flow.
+                    In the well documented case of hydropower outflow, severe riverbank or
+                    coastal erosion may occur. This is related to the blockage of sediment
+                    transport from the upstream side of the dam to the downstream side. This resembles somewhat the blockage of sediment
+                    caused by a breakwater.
+                    
+                    </P>
+                    A paradigm case is the coastal erosion demonstrated in relation to the
+                    operation of the hydropower dams in the Volta in Ghana.
+                    A paper written after the construction of the Akosombo dam 
+                    [<a name="bib", href="gdsref.html">5</a>] showed that the construction
+                    and operation of the hydropower dam at Akosombo caused the deep shoreface and coastal erosion of the Volta estuary.
+                    A more recent study of Anthony,
+                    [<a name="bib", href="gdsref.html">6</a>] replicates the findings of Ly in
+                    [<a name="bib", href="gdsref.html">5</a>]. Both studies demonstrate the erosion
+                    caused by the operation of the hydropower dam.
+                    </P>
+                    In accordance with <a name="orig", href="gdsdatasysp.html">the vision of GDS</a>
+                    it can be possible to mitigate the (nearby) riverbank erosion because
+                    of lack of sediment
+                    by placing hydrokinetic turbines in the outflow of the hydropower dam.
+                    The erosion occurs because of the abrasive action of the water without sediment to compensate.
+                    In the figure below (Fig 5) we see the situation when
+                    <u>no</u> tidal turbines are placed in the outflow.
+                    </p>
+                    Generating 4MW additional electricity.
+                    This is done with the placement of hydro-kinetic turbines in the outflow of the hydropower dam.
+                    The erosion measurements are the blue triangles.
+                    The software shows a more stable pattern (less geohydraulic fragility). This means less erosion.
+                    </I></p>
+                    In figure 6 one sees a diminished eroding pattern.
+                    This is in a certain sense an optical illusion because when no sediment is transpoterted from the upstream
+                    side, the erosion will remain at, or around, a certain level and will show no substantial progression anymore.
+                    Our tool is essentially looking for differentiations in patterns.
+                    Nevertheless the two inserted diagrams are presented because they refer to
+                    our model <a name="algores", href="gdsalg2.html">laboratory computations</a> and
+                    <a name="algosim", href="gdsalg3.html">laboratory simulations</a> and give a proper illustration of what is expected.
+
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card border-0">
+                        <img class="card-img-top" src="diag6.jpg" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Fig 5</h4>
+                            <p class="card-text"> 
+                            <i>
+                                <small>
+                                        Hydropower dam outflow. Streamlines are in red.
+                                        Measuring instruments are the blue triangles. They represent the
+                                        three sensors Water level, Temperature and Pressure.
+                                </small>
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- </p>
+                    <img src="diag1.jpg" widt=400 height=400>
+                    <B>Fig 1</B>
+                    </p>
+                </div> -->
+
+                
+                </div>
+            </div>
+            <hr>
+        </div>
+            <!-- /.container -->
+
+      <!-- Footer -->
+      </div>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Han Geurdes</p>
+        <p class="text-white text-center">
+            <i class="fas fa-envelope"></i> h.geurdes@gmail.com 
+            &nbsp;
+            &nbsp;
+            <i class="fas fa-phone"></i>+ 01 234 567 88</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
+
+

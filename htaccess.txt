@@ -1,6 +1,0 @@
-</>
-RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^.*$ https://%
-{ftp.d326928.cp.hostnet.nl}%{www.gdsdatasys.nl}
-[R=301,L]
