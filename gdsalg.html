@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<!-- This HTML file has been created by J.F. geurdes-->
+
+<TITLE>Algorithm GDS</TITLE>
+
+</HEAD>
+<BODY>
+</p>
+<B><I><u>Algorithm flow:</u></I></B>
+</P>
+In the figure below (Fig 1) the flow of the data is presented.</p>
+The model aims to obtain a random dynamical systems description of water level as output variable.
+The temperature and pressure are input variables.
+Note that the model is purely statistical. No physics assumptions are made.
+In [<a name="bib", href="gdsref.html">3</a>] we find proof
+that an initial approximative model can be converted to a better model, if a cocycle is found.
+In this sense the numerical analysis is doing the model-theorizing
+from the data. It must be noted that, most likely we are working with random differential equations
+with solution sets that overlap [<a name="bib", href="gdsref.html">7</a>].
+</p>
+Looking at Fig 1, after the first data cleaning module, we employed an initial linear random differential equation.
+as a basis for the computations.
+Subsequently, a cocycle (flow) structure is obtained [<a name="bib", href="gdsref.html">3</a>] in the box
+labeled "RDS model cocycle".
+</p>
+Subsequently, a water level is computed and presented. The latter is not a trivial representation of the computed cocycle values.
+There are two cases.
+One unperturbed, presented in the red-line (follow the blue 1 label) and one
+perturbed pressure (delta=0.5 kPa) presented in the purple line (follow the green 2 label).
+
+</p>
+<img src="diag1.jpg" widt=400 height=400>
+<B>Fig 1</B>
+</p>
+<I>
+The flow of the numerics through the computations is as follows.
+The inputs are time series in Pressure, Temperature and Water level in geo-environments like riverbank or coast.
+First the unperturbed model is computed.
+Follow the blue 1 to see the flow of the computation.
+The outcome is represented in a red line.
+The red-line is checked to fit the measured data in the black line (Fig. 1).
+If a reasonably good fit between measured (black - line) water level and
+computed (red-line) water level is found, then,
+the pressure is globally increased with 0.5kPa.
+In the numerics flow this is done along the green 2.
+</I></P>
+The starting point of the perturbation computations
+is the (horizontal line) exit of the Water level computation module. Then the perturbed P enters the cocycle via interpolation.
+Finally, Water level is computed again and presented in a purple line.(along the green 2).
+</p>
+Then we have three lines. The black line representing
+the measurements, the red-line representing the unperturbed model
+and the purple line representing the perturbed model.
+
+In the <a name="alg2" href="gdsalg2.html"><B>following section</B></a> it
+is demonstrated that this is related to geo-environment internal erosion.
+</BODY>
+</HTML>
